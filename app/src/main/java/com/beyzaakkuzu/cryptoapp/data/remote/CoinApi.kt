@@ -1,5 +1,6 @@
 package com.beyzaakkuzu.cryptoapp.data.remote
 
+import com.beyzaakkuzu.cryptoapp.data.remote.dto.CoinDetailDto
 import com.beyzaakkuzu.cryptoapp.data.remote.dto.CoinDto
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -10,5 +11,6 @@ interface CoinApi {
     suspend fun getCoins(): List<CoinDto>
 
     @GET("/v1/coins/{coinId}")
-    suspend fun getCoinsById(@Path("coinId") coinId:String )
+    suspend fun getCoinsById(@Path("coinId") coinId:String): CoinDetailDto
+
 }
